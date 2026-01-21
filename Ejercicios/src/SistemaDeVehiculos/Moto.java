@@ -3,33 +3,34 @@ package SistemaDeVehiculos;
 public class Moto extends Vehiculo{
 
     private int cilindrada;
-    private double consumoKm;
 
-    public Moto(String matricula, String marca, String modelo,int cilindrada,double consumoKm) {
-        super(matricula, marca, modelo);
+
+    public Moto(String matricula, String marca, String modelo,double consumoKm,int cilindrada) {
+        super(matricula, marca, modelo,consumoKm);
         this.cilindrada=cilindrada;
-        this.consumoKm=consumoKm;
+
     }
+
 
     public int getCilindrada() {
         return cilindrada;
     }
 
-    public double getConsumoKm() {
-        return consumoKm;
-    }
 
     public void setCilindrada(int cilindrada) {
         this.cilindrada = cilindrada;
     }
 
-    public void setConsumoKm(double consumoKm) {
-        this.consumoKm = consumoKm;
-    }
 
     @Override
-    public void calcularConsumo() {
+    public double calcularConsumo(/*double litros, double km*/) {
+        //km recorridos entre litros del deposito para conseguir el consumo
+        EntrasdaSalida.dameLitros();
 
+
+        double total=0;
+
+    return 0;
     }
 
     @Override
@@ -38,7 +39,7 @@ public class Moto extends Vehiculo{
         sb.append("==Moto==\n");
         sb.append(super.toString()).append("\n");
         sb.append("Cilindada: ").append(cilindrada).append("\n");
-        sb.append("Consumo de Km: ").append(consumoKm).append("\n");
+
 
         return sb.toString();
     }

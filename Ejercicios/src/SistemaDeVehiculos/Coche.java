@@ -3,13 +3,13 @@ package SistemaDeVehiculos;
 public class Coche extends Vehiculo{
 
     private int numeroPuertas;
-    private double consumoKm;
 
 
-    public Coche(String matricula, String marca, String modelo,int numeroPuertas, double consumoKm) {
-        super(matricula, marca, modelo);
+
+    public Coche(String matricula, String marca, String modelo, double consumoKm, int numeroPuertas) {
+        super(matricula, marca, modelo,consumoKm);
         this.numeroPuertas=numeroPuertas;
-        this.consumoKm=consumoKm;
+
     }
 
 
@@ -17,21 +17,16 @@ public class Coche extends Vehiculo{
         return numeroPuertas;
     }
 
-    public double getConsumoKm() {
-        return consumoKm;
-    }
-
     public void setNumeroPuertas(int numeroPuertas) {
         this.numeroPuertas = numeroPuertas;
     }
 
-    public void setConsumoKm(double consumoKm) {
-        this.consumoKm = consumoKm;
-    }
+
 
     @Override
-    public void calcularConsumo() {
+    public double calcularConsumo() {
 
+    return 0;
     }
 
 
@@ -42,7 +37,6 @@ public class Coche extends Vehiculo{
         sb.append("==Coche==\n");
         sb.append(super.toString()).append("\n");
         sb.append("Numero de Puertas: ").append(numeroPuertas).append("\n");
-        sb.append("Condumo de Km: ").append(consumoKm).append("\n");
 
         return sb.toString();
     }

@@ -4,11 +4,13 @@ public abstract class Vehiculo {
      private String matricula;
      private String marca;
      private String modelo;
+     protected double consumoKm;
 
-    public Vehiculo(String matricula,String marca, String modelo){
+    public Vehiculo(String matricula,String marca, String modelo,double consumoKm){
         this.matricula=matricula;
         this.marca=marca;
         this.modelo=modelo;
+        this.consumoKm=consumoKm;
 
     }
     public Vehiculo(){}
@@ -25,6 +27,7 @@ public abstract class Vehiculo {
         return matricula;
     }
 
+
     public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
@@ -37,7 +40,7 @@ public abstract class Vehiculo {
         this.modelo = modelo;
     }
 
-    public abstract void calcularConsumo();
+    public abstract double calcularConsumo();
 
     //metodo mostrar datos
     @Override
@@ -47,6 +50,7 @@ public abstract class Vehiculo {
         sb.append("Matricula: ").append(matricula).append("\n");
         sb.append("Marca: ").append(marca).append("\n");
         sb.append("Modelo: ").append(modelo).append("\n");
+        sb.append("Consumo de Km: ").append(consumoKm).append("\n");
         return sb.toString();
     }
 }
